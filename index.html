@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías de Peleadores</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #FFD700;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* Botones */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #333;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+            padding: 10px 15px;
+            width: 200px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #FFD700;
+            color: #111;
+        }
+
+        /* Tabla */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            overflow-x: auto;
+            display: none; /* Oculta las tablas inicialmente */
+            width: 100%;
+            max-width: 1200px; /* Controla el ancho máximo de la tabla */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+            color: #FFF;
+            font-size: 1em;
+        }
+
+        th {
+            background-color: #333;
+            color: #FFD700;
+            text-transform: uppercase;
+        }
+
+        /* Colores personalizados de columnas */
+        td:nth-child(1) {
+            background-color: #b3e5fc; /* Celeste pastel para "Nombre" */
+            color: #111;
+            font-weight: bold;
+        }
+
+        td:nth-child(3) {
+            background-color: #c8e6c9; /* Verde pastel para "Peso Femenino" */
+            color: #111;
+            font-weight: bold;
+        }
+
+        /* Alternancia de filas */
+        tbody tr:nth-child(even) {
+            background-color: #222;
+        }
+
+        tbody tr:hover {
+            background-color: #444;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            table {
+                width: 100%;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            th, td {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Categorías de Peleadores</h2>
+
+    <!-- Contenedor de botones -->
+    <div class="button-container">
+        <button class="button" onclick="showTable('amateur')">Amateur</button>
+        <button class="button" onclick="showTable('professional')">Profesionales y Semiprofesionales</button>
+    </div>
+
+    <!-- Tabla de categorías Amateur -->
+    <div class="table-container" id="amateur-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Peso Masculino</th>
+                    <th>Peso Femenino</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Mosca Ligero</td><td>48 kg</td><td>46 kg</td></tr>
+                <tr><td>Mosca</td><td>51 kg</td><td>48 kg</td></tr>
+                <tr><td>Gallo</td><td>54 kg</td><td>51 kg</td></tr>
+                <tr><td>Pluma</td><td>57 kg</td><td>54 kg</td></tr>
+                <tr><td>Ligero</td><td>60 kg</td><td>57 kg</td></tr>
+                <tr><td>Wélter Ligero</td><td>63.5 kg</td><td>60 kg</td></tr>
+                <tr><td>Wélter</td><td>67 kg</td><td>64 kg</td></tr>
+                <tr><td>Super Wélter</td><td>71 kg</td><td>69 kg</td></tr>
+                <tr><td>Medio</td><td>75 kg</td><td>75 kg</td></tr>
+                <tr><td>Crucero</td><td>81 kg</td><td>-</td></tr>
+                <tr><td>Semi Pesado</td><td>86 kg</td><td>-</td></tr>
+                <tr><td>Pesado</td><td>91 kg</td><td>-</td></tr>
+                <tr><td>Super Pesado</td><td>+91 kg</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tabla de categorías Profesionales y Semiprofesionales -->
+    <div class="table-container" id="professional-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Peso Masculino</th>
+                    <th>Peso Femenino</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Paja</td><td>47.7 kg</td><td>48 kg / 105.8 lb</td></tr>
+                <tr><td>Mini Mosca</td><td>49 kg</td><td>50.8 kg / 112 lb</td></tr>
+                <tr><td>Mosca</td><td>50.8 kg</td><td>-</td></tr>
+                <tr><td>Super Mosca</td><td>52.2 kg</td><td>52.2 kg</td></tr>
+                <tr><td>Gallo</td><td>53.5 kg</td><td>53.5 kg / 118 lb</td></tr>
+                <tr><td>Super Gallo</td><td>55.3 kg</td><td>55.3 kg / 122 lb</td></tr>
+                <tr><td>Pluma</td><td>57.2 kg</td><td>57.2 kg / 126 lb</td></tr>
+                <tr><td>Super Pluma</td><td>59 kg</td><td>60 kg / 132 lb</td></tr>
+                <tr><td>Ligero</td><td>61.2 kg</td><td>63.5 kg / 140 lb</td></tr>
+                <tr><td>Super Ligero</td><td>63.5 kg</td><td>-</td></tr>
+                <tr><td>Wélter</td><td>66.7 kg</td><td>69.9 kg / 154 lb</td></tr>
+                <tr><td>Super Wélter</td><td>69.9 kg</td><td>72.6 kg / 160 lb</td></tr>
+                <tr><td>Mediano</td><td>72.6 kg</td><td>-</td></tr>
+                <tr><td>Super Mediano</td><td>76.2 kg</td><td>+73 kg / 161 lb</td></tr>
+                <tr><td>Medio Crucero</td><td>79.4 kg</td><td>-</td></tr>
+                <tr><td>Crucero</td><td>82.4 kg</td><td>-</td></tr>
+                <tr><td>Semi Pesado</td><td>86.3 kg</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showTable(category) {
+            document.getElementById("amateur-table").style.display = "none";
+            document.getElementById("professional-table").style.display = "none";
+
+            if (category === 'amateur') {
+                document.getElementById("amateur-table").style.display = "block";
+            } else if (category === 'professional') {
+                document.getElementById("professional-table").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
